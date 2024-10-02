@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
 import * as topojson from 'topojson-client';
 
-const geoUrl = '/can-prov.topojson'; // Ensure this path is correct
+const geoUrl = '/can-geo-game/can-prov.topojson'; // Ensure this path is correct
 
 const Map = ({ onSelectProvince, currentProvince }) => {
   const [geographies, setGeographies] = useState([]);
