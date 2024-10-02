@@ -36,6 +36,7 @@ const App = () => {
 
   const handleSelectProvince = (selectedName) => {
     console.log(selectedName);
+
     // if (currentProvince && currentProvince.name.toLowerCase() === selectedName.toLowerCase()) {
     //   handleCorrectAnswer();
     // } else {
@@ -46,7 +47,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-blue-100 flex flex-col items-center p-4">
       <h1 className="text-3xl font-bold mb-4">Canadian Geography</h1>
-      <Map onSelectProvince={handleSelectProvince} currentProvince={currentProvince} />
+      <Map onSelectProvince={handleSelectProvince} currentProvince={currentProvince} showCapital={showCapital} />
 
       <Score score={score} />
       {currentProvince && (
