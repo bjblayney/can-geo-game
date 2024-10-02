@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/can-geo-game/static/css/main.e9342850.css",
+    "main.js": "/can-geo-game/static/js/main.605911e3.js",
+    "index.html": "/can-geo-game/index.html",
+    "main.e9342850.css.map": "/can-geo-game/static/css/main.e9342850.css.map",
+    "main.605911e3.js.map": "/can-geo-game/static/js/main.605911e3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e9342850.css",
+    "static/js/main.605911e3.js"
+  ]
+}
