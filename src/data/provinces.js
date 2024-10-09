@@ -1,7 +1,7 @@
 // src/data/provinces.js
 const provinces = [
   { name: 'Ontario', capital: 'Toronto', coordinates: [-79.3832, 43.6532] },
-  { name: 'Quebec', capital: 'Quebec City', coordinates: [-71.208, 46.8139] },
+  { name: 'Québec', capital: 'Québec City', coordinates: [-71.208, 46.8139] },
   { name: 'British Columbia', capital: 'Victoria', coordinates: [-123.3656, 48.4284] },
   { name: 'Alberta', capital: 'Edmonton', coordinates: [-113.4938, 53.5461] },
   { name: 'Manitoba', capital: 'Winnipeg', coordinates: [-97.1384, 49.8951] },

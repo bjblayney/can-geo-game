@@ -21,14 +21,14 @@ const Autocomplete = ({ setProvinceName, resetInput }) => {
 
   // Handle suggestion click
   const handleSuggestionClick = (name) => {
-    console.log(name);
+    // console.log(name);
     setInputValue(name);
     setProvinceName(name);
     setSuggestions([]);
   };
 
   useEffect(() => {
-    console.log(resetInput);
+    // console.log(resetInput);
     if (resetInput) {
       setInputValue(''); // Reset the input field
     }

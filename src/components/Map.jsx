@@ -2,10 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
 import * as topojson from 'topojson-client';
+import provinceColors from '../data/provinceColours';
 
 const geoUrl = '/can-geo-game/can-prov.topojson';
 
-const Map = ({ onSelectProvince, currentProvince, showCapital }) => {
+const Map = ({ onSelectProvince, currentProvince, showCapital, gameOver }) => {
   const [geographies, setGeographies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -55,7 +56,10 @@ const Map = ({ onSelectProvince, currentProvince, showCapital }) => {
         <Geographies geography={geographies}>
           {({ geographies }) =>
             geographies.map((geo) => {
-              const isActive = geo.properties.name === currentProvince.name; // Check if the province is active
+              const provinceName = geo.properties.name;
+              const isActive = provinceName === currentProvince.name; // Check if the province is active
+              const fillColor = provinceColors[provinceName] || '#EEE'; // Default color if not mapped
+
               return (
                 <Geography
                   key={geo.rsmKey}
@@ -65,12 +69,16 @@ const Map = ({ onSelectProvince, currentProvince, showCapital }) => {
                   }} // Handle user clicks
                   className={`transition-colors duration-300 ${isActive ? 'fill-yellow-500 stroke-orange-500' : 'fill-gray-300 stroke-white'}`}
                   style={{
-                    //   default: {
-                    //     fill: isActive ? '#FF5722' : '#ECEFF1', // Active province gets a different color
-                    //     outline: 'none',
-                    //   },
+                    default: {
+                      fill: isActive ? '#FFD700' : gameOver ? fillColor : '#B0E0E6', // Highlight active province
+                      outline: 'none',
+                      stroke: isActive ? '#FF8C00' : '#FFFFFF',
+                      strokeWidth: isActive ? 2 : 1,
+                      cursor: 'pointer',
+                      transition: 'fill 0.3s, stroke 0.3s',
+                    },
                     hover: {
-                      fill: '#FF7043', // Hover effect
+                      fill: '#B0E0E6', // Light Blue on hover
                       outline: 'none',
                     },
                     pressed: {
@@ -89,7 +97,7 @@ const Map = ({ onSelectProvince, currentProvince, showCapital }) => {
               <circle cx={12} cy={10} r={3} fill="#FF5722" />
               <path d="M12 21v-11" />
             </g>
-            <text textAnchor="middle" y={-16} style={{ fontFamily: 'system-ui', fill: '#5D5A6D' }}>
+            <text textAnchor="middle" y={-19} style={{ fontFamily: 'system-ui', fontWeight: `700`, fill: '#5D5A6D' }}>
               {currentProvince.capital}
             </text>
           </Marker>
