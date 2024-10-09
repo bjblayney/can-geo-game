@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/can-geo-game/static/css/main.d8a1b3c5.css",
-    "main.js": "/can-geo-game/static/js/main.9335f21d.js",
+    "main.css": "/can-geo-game/static/css/main.c9858424.css",
+    "main.js": "/can-geo-game/static/js/main.7d603cdb.js",
     "index.html": "/can-geo-game/index.html",
-    "main.d8a1b3c5.css.map": "/can-geo-game/static/css/main.d8a1b3c5.css.map",
-    "main.9335f21d.js.map": "/can-geo-game/static/js/main.9335f21d.js.map"
+    "main.c9858424.css.map": "/can-geo-game/static/css/main.c9858424.css.map",
+    "main.7d603cdb.js.map": "/can-geo-game/static/js/main.7d603cdb.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8a1b3c5.css",
-    "static/js/main.9335f21d.js"
+    "static/css/main.c9858424.css",
+    "static/js/main.7d603cdb.js"
   ]
 }
