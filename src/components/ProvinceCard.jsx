@@ -34,6 +34,8 @@ const ProvinceCard = ({ province, onCorrect, onHint, hintsLeft, gameOver }) => {
           <h2 className="text-xl mb-2">Identify the Province and its Capital</h2>
           {error && <p className="text-red-500">{error}</p>}
           <form onSubmit={handleSubmit} className="flex flex-col space-y-2">
+            
+            <Autocomplete setProvinceName={setProvinceName} resetInput={resetInput} />
             <input
               type="text"
               placeholder={'Capital Name'}
@@ -42,7 +44,6 @@ const ProvinceCard = ({ province, onCorrect, onHint, hintsLeft, gameOver }) => {
               className="border p-2 rounded"
               required
             />
-            <Autocomplete setProvinceName={setProvinceName} resetInput={resetInput} />
 
             <button type="submit" className="bg-green-500 text-white p-2 rounded hover:bg-green-600">
               Submit

@@ -67,18 +67,18 @@ const Map = ({ onSelectProvince, currentProvince, showCapital, gameOver }) => {
                   onClick={() => {
                     onSelectProvince(geo);
                   }} // Handle user clicks
-                  className={`transition-colors duration-300 ${isActive ? 'fill-yellow-500 stroke-orange-500' : 'fill-gray-300 stroke-white'}`}
+                  className={`transition-colors duration-300 ${isActive ? 'fill-red-500 stroke-gray-50' : 'fill-red-300 stroke-white'}`}
                   style={{
                     default: {
-                      fill: isActive ? '#FFD700' : gameOver ? fillColor : '#B0E0E6', // Highlight active province
+                      fill: isActive ? 'oklch(52.7% 0.154 150.069)' : gameOver ? fillColor : 'oklch(84.5% 0.143 164.978)', // Highlight active province
                       outline: 'none',
-                      stroke: isActive ? '#FF8C00' : '#FFFFFF',
-                      strokeWidth: isActive ? 2 : 1,
+                      stroke: '#FFFFFF',
+                      strokeWidth: 1,
                       cursor: 'pointer',
                       transition: 'fill 0.3s, stroke 0.3s',
                     },
                     hover: {
-                      fill: '#B0E0E6', // Light Blue on hover
+                      fill: 'oklch(69.6% 0.17 162.48)', // Light Blue on hover
                       outline: 'none',
                     },
                     pressed: {
@@ -97,7 +97,7 @@ const Map = ({ onSelectProvince, currentProvince, showCapital, gameOver }) => {
               <circle cx={12} cy={10} r={3} fill="#FF5722" />
               <path d="M12 21v-11" />
             </g>
-            <text textAnchor="middle" y={-19} style={{ fontFamily: 'system-ui', fontWeight: `700`, fill: '#5D5A6D' }}>
+            <text textAnchor="middle" y={-19} style={{ fontFamily: 'system-ui', fontWeight: `700`, fill: '#000000', fontSize: 25 }}>
               {currentProvince.capital}
             </text>
           </Marker>
